@@ -1,9 +1,9 @@
 public class Civils {
-    private String nom;
-    private String prenom;
-    private String civilite;
-    private String email;
-    private String telephone;
+    public String nom;
+    public String prenom;
+    public String civilite;
+    public String email;
+    public String telephone;
     private String dateDeNaissance;
     private String dateDeDeces;
     public String organisation;
