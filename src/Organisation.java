@@ -4,7 +4,7 @@ public class Organisation {
     public String nom;
     public String siegeSocial;
     public String dirigeant;
-    private ArrayList<String> membres = new ArrayList<>();
+    private ArrayList<String> membres;
     private String commentaire;
     private String dateAjout;
     private String dateLastModif;
