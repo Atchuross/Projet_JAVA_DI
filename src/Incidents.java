@@ -36,6 +36,8 @@ public class Incidents extends Civils{
             super.email = scanner.nextLine();
             System.out.println("Telephone : ");
             super.telephone = scanner.nextLine();
+
+            System.out.println("Le nom est  : " + nom);
         }
 
     }
