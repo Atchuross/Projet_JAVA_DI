@@ -1,31 +1,72 @@
-import java.util.Scanner;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
 
-public class Main {
-    public static void main(String[] args){
-        Incidents incident1 = new Incidents();
-        Scanner menu = new Scanner(System.in);
+public class Main extends JFrame implements ActionListener {
 
-        System.out.println("#####################");
-        System.out.println("######SUPER_CRM######");
-        System.out.println("#####################");
+    JPanel panel;
+    JLabel user_label, password_label, message;
+    JTextField userName_text;
+    JPasswordField password_text;
+    JButton submit, cancel;
 
-        System.out.println(" ");
+    Main() {
 
-        System.out.println("1. Déclarer un Incidents");
-        System.out.println("2. Voir les missions");
-        int choix = menu.nextInt();
+        // User Label
+        user_label = new JLabel();
+        user_label.setText("User Name :");
+        userName_text = new JTextField();
 
+        // Password
 
-        System.out.println(choix);
+        password_label = new JLabel();
+        password_label.setText("Password :");
+        password_text = new JPasswordField();
 
-        if(choix == 1){
-            System.out.println("Veuillez renter les informations suivante");
-            incident1.setIncident();
-            incident1.getIncident();
-        }else if(choix == 2){
-            System.out.println("Aucune mission en cours...");
-        }
+        // Submit
+
+        submit = new JButton("SUBMIT");
+
+        panel = new JPanel(new GridLayout(3, 1));
+
+        panel.add(user_label);
+        panel.add(userName_text);
+        panel.add(password_label);
+        panel.add(password_text);
+
+        message = new JLabel();
+        panel.add(message);
+        panel.add(submit);
+
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // Adding the listeners to components..
+        submit.addActionListener(this);
+        add(panel, BorderLayout.CENTER);
+        setTitle("Please Login Here !");
+        setSize(300, 100);
+        setVisible(true);
 
 
     }
+
+    public static void main(String[] args) {
+        new Main();
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        String userName = userName_text.getText();
+        String password = password_text.getText();
+        if (userName.trim().equals("admin") && password.trim().equals("admin")) {
+            NextPage page=new NextPage();
+            page.setVisible(true);
+            JLabel label = new JLabel("Welcome: Avengers Admin");
+            page.getContentPane().add(label);
+        } else {
+            message.setText(" Invalid user.. ");
+        }
+
+    }
+
 }

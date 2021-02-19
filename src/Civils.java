@@ -1,5 +1,5 @@
 public class Civils {
-    public String nom;
+    public static String nom;
     public String prenom;
     public String civilite;
     public String email;
