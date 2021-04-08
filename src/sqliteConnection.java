@@ -7,6 +7,7 @@ public class sqliteConnection {
 		try {
 		Class.forName ("org.sqlite.JDBC");
 		Connection conn=DriverManager.getConnection("jdbc:sqlite:C:\\Users\\cleme\\IdeaProjects\\dbtest.sqlite");
+		JOptionPane.showMessageDialog (null, "Connection DB done :)");
 		return conn;
 		}
 		catch (Exception e) {
@@ -15,4 +16,3 @@ public class sqliteConnection {
 		}
 	}
 }
-
