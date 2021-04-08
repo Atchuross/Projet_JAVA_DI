@@ -6,7 +6,7 @@ public class sqliteConnection {
 	public static Connection dbConnector () {
 		try {
 		Class.forName ("org.sqlite.JDBC");
-		Connection conn=DriverManager.getConnection("jdbc:sqlite:C:\\Users\\cleme\\IdeaProjects\\dbtest.sqlite");
+		Connection conn=DriverManager.getConnection("jdbc:sqlite:C:\\Users\\cleme\\Desktop\\PROJET_JAVA_DI\\GIT clone\\Projet_JAVA_DI\\#DB\\dbtest.sqlite");
 		JOptionPane.showMessageDialog (null, "Connection DB done :)");
 		return conn;
 		}
