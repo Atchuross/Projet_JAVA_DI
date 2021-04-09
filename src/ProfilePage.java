@@ -11,6 +11,7 @@ import java.awt.Image;
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Toolkit;
+import javax.swing.JButton;
 
 public class ProfilePage extends JFrame {
 
@@ -34,7 +35,7 @@ public class ProfilePage extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ProfilePage(String heroName ,String firstname, String lastname, String picture) {
+	public ProfilePage(String heroName ,String firstname, String lastname, String picture, Integer AID) {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\cleme\\eclipse-workspace\\JAVA_DI local files\\img\\icons8-avengers-26.png"));
 		
 		
@@ -65,5 +66,47 @@ public class ProfilePage extends JFrame {
 		lblNewLabel_1.setFont(new Font("Segoe UI Historic", Font.PLAIN, 20));
 		lblNewLabel_1.setBounds(331, 107, 53, 25);
 		contentPane.add(lblNewLabel_1);
+		if(AID == 1) {
+			JButton mesMission = new JButton("Voir mes missions");
+			mesMission.setBounds(112, 214, 220, 92);
+			contentPane.add(mesMission);
+			
+			JButton btnMissing1 = new JButton("??");
+			btnMissing1.setBounds(112, 355, 220, 92);
+			contentPane.add(btnMissing1);
+			
+			JButton btnMissing2 = new JButton("??");
+			btnMissing2.setBounds(376, 214, 220, 92);
+			contentPane.add(btnMissing2);
+			
+			JButton btnMissing3 = new JButton("??");
+			btnMissing3.setBounds(376, 355, 220, 92);
+			contentPane.add(btnMissing3);
+			
+			JButton waitingMission = new JButton("3 Mission en attente");
+			waitingMission.setBounds(634, 214, 220, 92);
+			contentPane.add(waitingMission);
+			
+			JButton Litige = new JButton("3 Litige en cours");
+			Litige.setBounds(634, 355, 220, 92);
+			contentPane.add(Litige);
+		}
+		else {
+		JButton mesMission = new JButton("Voir mes missions");
+		mesMission.setBounds(154, 214, 220, 92);
+		contentPane.add(mesMission);
+		
+		JButton btnMissing1 = new JButton("??");
+		btnMissing1.setBounds(154, 355, 220, 92);
+		contentPane.add(btnMissing1);
+		
+		JButton btnMissing2 = new JButton("??");
+		btnMissing2.setBounds(572, 214, 220, 92);
+		contentPane.add(btnMissing2);
+		
+		JButton btnMissing3 = new JButton("??");
+		btnMissing3.setBounds(572, 355, 220, 92);
+		contentPane.add(btnMissing3);
+		}
 	}
 }

@@ -1,1 +1,0 @@
-INDEX VERSION 1.131+C:\Users\cleme\Desktop\PROJET_JAVA_DI\GIT clone\Projet_JAVA_DI\.metadata\.plugins\org.eclipse.jdt.core

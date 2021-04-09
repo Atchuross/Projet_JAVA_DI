@@ -64,15 +64,24 @@ public class LoginForm extends JFrame {
 					PreparedStatement pst=connection.prepareStatement(query);
 					pst.setString(1, usernameField.getText());
 					pst.setString(2, passwordField.getText());
-					String name = usernameField.getText(); 
 					
 					ResultSet rs=pst.executeQuery();
+					String heroName = rs.getString("nomHero");
+					String firstname = rs.getString("firstname");
+					String lastname = rs.getString("lastname");
+					String picture = rs.getString("icon");
+					Integer AID = rs.getInt("AID");
 					int count=0;
 					while(rs.next()) {
 						count++;
 					}
 					if(count == 1) {
-						JOptionPane.showMessageDialog (null, "Bienvenu " + name + "!");
+						ProfilePage page=new ProfilePage(heroName, firstname, lastname, picture, AID);
+			            page.setVisible(true);
+			            JLabel label = new JLabel("Welcome: ");
+			            page.getContentPane().add(label);
+			            setVisible(false); //you can't see me!
+			            dispose();
 					}else if(count > 1) {
 						JOptionPane.showMessageDialog (null, "Désolé vos identifiant sont identique a un autre contacter le support");
 					}else {
