@@ -10,21 +10,6 @@ public class LoginForm extends JFrame {
 	private JPanel contentPane;
 	private JTextField usernameField;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					LoginForm frame = new LoginForm();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 	Connection connection=null;
 	private JPasswordField passwordField;
 
